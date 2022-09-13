@@ -1,0 +1,43 @@
+.logo {
+    width: 100px;
+    height: 100px;
+}
+h1 {
+    font-size: 2em;
+    color: white;
+}
+
+.Navbar {
+    padding: 0 4em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: #c7d36f;
+}
+
+.NavSec {
+    display: flex;
+    flex-direction: row;
+}
+
+.NavSec li {
+    margin: 0 0.5em;
+    padding: 0.5em;
+    list-style: none;
+}
+
+.NavSec a {
+    padding: inherit;
+    text-decoration: none;
+    background-color: #9eb23b;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 0.5em;
+}
+
+.User > a {
+    text-decoration: none;
+    list-style: none;
+}
