@@ -1,7 +1,10 @@
-import "./styles.css";
+import "./navbar.css";
+import CartWidget from "./CartWidget";
+import UserWidget from "./UserWidget";
 
 function NavBar({ title }) {
     return (
+        <>
         <nav className="Navbar">
             <img src="/assets/images/logo.png" alt="logo" className="logo" />
             <h1>{title}</h1>
@@ -20,13 +23,18 @@ function NavBar({ title }) {
 
             <ul className="NavSec User">
                 <li>
-                    <a href="#">Entrar</a>
+                    <a href="#">  
+                    <CartWidget /> Carrito
+                    </a>
                 </li>
                 <li>
-                    <a href="#">Carrito</a>
+                    <a href="#">
+                    <UserWidget />Usuario</a>
                 </li>
             </ul>
         </nav>
+        
+        </>
     );
 }
 

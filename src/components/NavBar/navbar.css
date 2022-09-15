@@ -6,6 +6,14 @@ h1 {
     font-size: 2em;
     color: white;
 }
+main{
+    background-color: #9eb23b;
+}
+
+main .titulo{
+    text-align: center;
+    color: white;
+}
 
 .Navbar {
     padding: 0 4em;

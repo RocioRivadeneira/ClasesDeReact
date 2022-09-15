@@ -1,11 +1,12 @@
 import "./App.css";
-
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemListContainer";
 
 function App() {
     return (
-        <div>
-            <NavBar title="Muebles Smith´s" />
+        <div className="App">
+            <NavBar title="Muebles Smiths" />
+            <ItemListContainer greeting="Nuestros productos" />
         </div>
     );
 }
