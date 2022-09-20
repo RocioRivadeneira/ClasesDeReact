@@ -1,0 +1,39 @@
+.contenedorPadre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+   
+}
+
+.buttons {
+    font-size: 20px;
+    position: relative;
+}
+
+button{
+  border-style: none;
+}
+
+.contador{
+  text-align: center;
+  width: 50%;
+  border-style: none;
+}
+
+.box{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+  border: 1px solid #0099CC;
+
+}
+
+.carrito{
+  margin-top: 10px;
+  padding: 10px;
+color: #0099CC;
+border: 1px solid #0099CC;
+
+}

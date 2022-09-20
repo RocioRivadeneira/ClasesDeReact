@@ -5,7 +5,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 function UserWidget() {
     return (
         <>
-            <span classId="user">
+            <span classID="user">
                 <FontAwesomeIcon icon={faUser} />
             </span>
         </>
