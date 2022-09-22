@@ -4,17 +4,14 @@ import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 import "./count.css";
 
-const ItemCount = () => {
+const ItemCount = ({ stockLimit }) => {
     /* Se inicializa el contador en 0 */
     const [contador, setContador] = useState(0);
-
-    /* declaro el stock*/
-    const stock = 7;
 
     /* funcion para incrementar el contador*/
     const incrementoContador = () => {
         /* utilizo el estado ya declarado setContador para incrementar la cantidad*/
-        if (contador < stock) {
+        if (contador < stockLimit) {
             setContador(contador + 1);
         }
     };
@@ -43,7 +40,7 @@ const ItemCount = () => {
                     <button
                         className="agregar"
                         onClick={incrementoContador}
-                        disabled={contador === stock}
+                        disabled={contador === stockLimit}
                     >
                         <FontAwesomeIcon icon={faPlus} />
                     </button>

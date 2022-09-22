@@ -1,8 +1,11 @@
-.main {
-    display: flex;
-}
 .card {
-    text-align: center;
     width: 18rem;
-    margin: 10px auto;
+
+    margin: 1rem 0;
+
+    text-align: center;
+}
+
+.vermas {
+    text-decoration: none;
 }

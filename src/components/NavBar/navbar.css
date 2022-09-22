@@ -3,27 +3,25 @@
     height: 100px;
 }
 
-h1{
-   color: white;
+h1 {
+    color: white;
 }
 
-h2{
+h2 {
     color: white;
     margin: 0px;
     text-align: center;
     background-color: #9eb23b;
 }
 
-main{
+main {
     background-color: #b7c76a;
 }
 
-main .titulo{
+main .titulo {
     text-align: center;
     color: white;
 }
-
-
 
 /*Navbaaar*/
 .Navbar {
