@@ -97,7 +97,7 @@ const data = [
     },
 ];
 
-function getItems() {
+export function getItems() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(data);
@@ -105,4 +105,10 @@ function getItems() {
     });
 }
 
-export default getItems;
+export function getItem(itemId) {
+    return new Promise((resolve, reject) => {
+        const item = data.find(({ id }) => id === itemId);
+
+        setTimeout(() => resolve(item), 2000);
+    });
+}
