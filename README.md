@@ -1,9 +1,8 @@
 # Primera entrega del proyecto React
 
 Este proyecto cuenta con:
--HTML
--CSS
--JavaScript
--Bootstrap
--React
-
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- React
