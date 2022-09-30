@@ -1,0 +1,17 @@
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #b7c76a;
+    height: 80px;
+}
+.pie{
+    color: white; 
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;  
+}
+
+.pie:hover{
+    color: black;
+}

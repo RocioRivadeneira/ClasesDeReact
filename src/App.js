@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailConteiner from "./components/ItemDetailContainer";
-//import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer";
+
 
 function App() {
     return (
@@ -23,8 +24,9 @@ function App() {
                 />
                 <Route path="/detail/:id" element={<ItemDetailConteiner />} />
             </Routes>
+            <Footer />
         </BrowserRouter>
+        
     );
 }
-
 export default App;

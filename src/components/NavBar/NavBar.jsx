@@ -27,11 +27,8 @@ function NavBar({ title }) {
                     <Link to="/categoria/Exterior" className="link">
                         Muebles de Exterior
                     </Link>
-                    <Link to="/categoria/Interior" className="link">
-                        Muebles de Interior
-                    </Link>
-                    <Link to="/categoria/Cocina" className="link">
-                        Cocina
+                    <Link to="/categoria/Habitacion" className="link">
+                        Habitacion
                     </Link>
                     <Link to="/categoria/Living" className="link">
                         Living
@@ -39,12 +36,12 @@ function NavBar({ title }) {
                 </div>
 
                 <div className="NavSec user">
-                    <Link to="/" className="">
+                    <Link to="/" className="User">
                         <CartWidget />
                         Carrito
                     </Link>
 
-                    <Link to="/" className="">
+                    <Link to="/" className="User">
                         <UserWidget />
                         Usuario
                     </Link>
