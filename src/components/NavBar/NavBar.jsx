@@ -1,43 +1,54 @@
-import "./navbar.css";
+import React from "react";
+
+import { Link } from "react-router-dom";
+
 import CartWidget from "./CartWidget";
 import UserWidget from "./UserWidget";
+
+import "./navbar.css";
 
 function NavBar({ title }) {
     return (
         <>
             <nav className="Navbar">
-                <img
-                    src="/assets/images/logo.png"
-                    alt="logo"
-                    className="logo"
-                />
+                <Link to="/">
+                    <img
+                        src="/assets/images/logo.png"
+                        alt="logo"
+                        className="logo"
+                    />
+                </Link>
                 <h1>{title}</h1>
 
-                <ul className="NavSec Menu">
-                    <li>
-                        <a href="#">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="#">Galeria</a>
-                    </li>
-                    <li>
-                        <a href="#">Contacto</a>
-                    </li>
-                </ul>
+                <div className="NavSec Menu">
+                    <Link to="/" className="link">
+                        Home
+                    </Link>
+                    <Link to="/categoria/Exterior" className="link">
+                        Muebles de Exterior
+                    </Link>
+                    <Link to="/categoria/Interior" className="link">
+                        Muebles de Interior
+                    </Link>
+                    <Link to="/categoria/Cocina" className="link">
+                        Cocina
+                    </Link>
+                    <Link to="/categoria/Living" className="link">
+                        Living
+                    </Link>
+                </div>
 
-                <ul className="NavSec User">
-                    <li>
-                        <a href="#">
-                            <CartWidget /> Carrito
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <UserWidget />
-                            Usuario
-                        </a>
-                    </li>
-                </ul>
+                <div className="NavSec user">
+                    <Link to="/" className="">
+                        <CartWidget />
+                        Carrito
+                    </Link>
+
+                    <Link to="/" className="">
+                        <UserWidget />
+                        Usuario
+                    </Link>
+                </div>
             </nav>
         </>
     );

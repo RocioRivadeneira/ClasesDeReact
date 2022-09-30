@@ -1,6 +1,8 @@
 import React from "react";
-import "./item.css";
+
 import ItemCount from "../ItemCount/Count";
+
+import "./item.css";
 
 function ItemDetail({ img, title, detail, price, stock }) {
     return (

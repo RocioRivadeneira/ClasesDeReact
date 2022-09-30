@@ -1,6 +1,9 @@
 import React from "react";
-import "./card.css";
+import { Link } from "react-router-dom";
+
 import ItemCount from "../ItemCount/Count";
+
+import "./card.css";
 
 function Item(props) {
     return (
@@ -9,9 +12,9 @@ function Item(props) {
             <div className="card-body">
                 <h5 className="card-title">{props.title}</h5>
                 <p className="card-text">{props.detail} </p>
-                <a href="#" className="vermas">
-                    <p>Ver detalles del producto</p>
-                </a>
+                <Link to={`/detail/${props.id}`} className="vermas">
+                    Ver detalles del producto
+                </Link>
                 <h4 className="card-price">${props.price}</h4>
 
                 <strong>Stock Disponible: {props.stock}</strong>

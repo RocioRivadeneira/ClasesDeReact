@@ -36,7 +36,7 @@ const ItemCount = ({ stockLimit }) => {
                     >
                         <FontAwesomeIcon icon={faMinus} />
                     </button>
-                    <input className="contador" value={contador} />
+                    <input className="contador" value={contador} readOnly />
                     <button
                         className="agregar"
                         onClick={incrementoContador}

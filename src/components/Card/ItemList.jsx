@@ -1,4 +1,5 @@
 import React from "react";
+
 import Item from "./Item";
 
 function ItemList(props) {
@@ -9,6 +10,7 @@ function ItemList(props) {
                     <Item
                         className="col-4"
                         key={item.id}
+                        id={item.id}
                         img={item.img}
                         title={item.title}
                         detail={item.detail}
