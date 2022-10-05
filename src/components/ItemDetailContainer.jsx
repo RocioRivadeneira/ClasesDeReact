@@ -24,10 +24,5 @@ function ItemDetailConteiner() {
         </div>
     );
 }
-// return (
-//     <div>
-//       <ItemDetail course={data} />
-//     </div>
-//   );
-// }
+
 export default ItemDetailConteiner;

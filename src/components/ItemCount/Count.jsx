@@ -4,9 +4,9 @@ import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 import "./count.css";
 
-const ItemCount = ({ stockLimit }) => {
+const ItemCount = ({ stockLimit, onAddToCart }) => {
     /* Se inicializa el contador en 0 */
-    const [contador, setContador] = useState(0);
+    const [contador, setContador] = useState(1);
 
     /* funcion para incrementar el contador*/
     const incrementoContador = () => {
@@ -18,7 +18,7 @@ const ItemCount = ({ stockLimit }) => {
 
     const decrementoContador = () => {
         /* Utilizo el estado ya declarado para decrementar la cantidad */
-        if (contador >= 1) {
+        if (contador > 1) {
             setContador(contador - 1);
         }
     };
@@ -32,7 +32,7 @@ const ItemCount = ({ stockLimit }) => {
                     <button
                         className="descontar"
                         onClick={decrementoContador}
-                        disabled={contador === 0}
+                        disabled={contador === 1}
                     >
                         <FontAwesomeIcon icon={faMinus} />
                     </button>
@@ -45,7 +45,9 @@ const ItemCount = ({ stockLimit }) => {
                         <FontAwesomeIcon icon={faPlus} />
                     </button>
                 </div>
-                <button className="carrito"> Agregar al carrito</button>
+                <button className="carrito" onClick={onAddToCart}>
+                    Agregar al carrito
+                </button>
             </div>
         </div>
     );
