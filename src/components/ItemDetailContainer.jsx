@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
 import { getItem } from "../services/mockAPI";
 import ItemDetail from "./ItemDetail/ItemDetail";
 
 function ItemDetailConteiner() {
-    const { id } = useParams();
-
     let [item, setData] = useState({});
+    const { id } = useParams();
 
     useEffect(() => {
         getItem(id).then(setData);
@@ -26,5 +24,10 @@ function ItemDetailConteiner() {
         </div>
     );
 }
-
+// return (
+//     <div>
+//       <ItemDetail course={data} />
+//     </div>
+//   );
+// }
 export default ItemDetailConteiner;

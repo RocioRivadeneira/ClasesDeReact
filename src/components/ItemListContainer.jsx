@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { getItems, getItemsByCategory } from "../services/mockAPI";
 
 import ItemList from "./Card/ItemList";
-import { getItems, getItemsByCategory } from "../services/mockAPI";
 
 import "./NavBar/navbar.css";
 import "./Card/card.css";
 
 function ItemListContainer() {
-    const { category } = useParams();
-
     let [data, setData] = useState([]);
+    const { category } = useParams();
 
     useEffect(() => {
         if (category === undefined) {

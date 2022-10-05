@@ -9,6 +9,9 @@ function ItemList(props) {
                 return (
                     <Item
                         className="col-4"
+                        onClickImagen={() => {
+                            console.log("click card");
+                          }}
                         key={item.id}
                         id={item.id}
                         img={item.img}
