@@ -9,7 +9,8 @@ export default function CartContextProvider({ children }) {
         if (isInCart(item.id)) {
             let newCart = cart.map((itemMapeo) => {
                 if (itemMapeo.id === item.id) {
-                    itemMapeo.quantity += quantity;
+                    itemMapeo.quantity = quantity;
+
                     return itemMapeo;
                 } else return itemMapeo;
             });
@@ -17,9 +18,21 @@ export default function CartContextProvider({ children }) {
             setCart(newCart);
         } else {
             let newCart = cart.map((item) => item);
+
             newCart.push({ ...item, quantity });
+
             setCart(newCart);
         }
+    }
+
+    function removeItem(item) {
+        setCart(
+            cart.filter(({ id }) => id !== item.id).map((item) => ({ ...item }))
+        );
+    }
+
+    function clear() {
+        setCart([]);
     }
 
     function getTotalItemsInCart() {
@@ -28,13 +41,21 @@ export default function CartContextProvider({ children }) {
 
     function isInCart(id) {
         let found = cart.some((item) => item.id === id);
+
         return found;
     }
 
     return (
         //3. pasamos el objeto Value a los componentes hijos
         <cartCtx.Provider
-            value={{ cart, addItem, getTotalItemsInCart, isInCart }}
+            value={{
+                cart,
+                addItem,
+                removeItem,
+                clear,
+                getTotalItemsInCart,
+                isInCart,
+            }}
         >
             {children}
         </cartCtx.Provider>

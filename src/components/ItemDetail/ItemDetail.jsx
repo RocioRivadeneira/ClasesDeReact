@@ -6,10 +6,14 @@ import ItemCount from "../ItemCount/Count";
 import "./item.css";
 
 function ItemDetail(item) {
-    const { addItem } = useContext(cartCtx);
+    const { addItem, removeItem } = useContext(cartCtx);
 
     function handleAddToCart(quantity) {
         addItem(item, quantity);
+    }
+
+    function handleItemDelete() {
+        removeItem(item);
     }
 
     return (
@@ -25,6 +29,13 @@ function ItemDetail(item) {
                         stockLimit={item.stock}
                         onAddToCart={handleAddToCart}
                     />
+                    <button
+                        type="button"
+                        className="btn btn-link text-decoration-none mt-2"
+                        onClick={handleItemDelete}
+                    >
+                        Quitar del carrito
+                    </button>
                 </div>
             </div>
         </FlexWrapper>

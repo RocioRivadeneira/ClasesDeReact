@@ -15,6 +15,7 @@ function ItemDetailConteiner() {
         <div className="d-flex justify-content-center">
             <ItemDetail
                 key={item.id}
+                id={item.id}
                 img={item.img}
                 title={item.title}
                 detail={item.detail}
