@@ -19,9 +19,12 @@ function ItemDetail(item) {
                 <div className="card-body">
                     <h5 className="card-title">{item.title}</h5>
                     <p className="card-text">{item.detail} </p>
-                    <h4 className="card-price">${item.price}</h4>
+                    <h4 className="card-price">$ {item.price}</h4>
                     <strong>Stock Disponible: {item.stock}</strong>
-                    <ItemCount stock={5} onAddToCart={handleAddToCart} />
+                    <ItemCount
+                        stockLimit={item.stock}
+                        onAddToCart={handleAddToCart}
+                    />
                 </div>
             </div>
         </FlexWrapper>

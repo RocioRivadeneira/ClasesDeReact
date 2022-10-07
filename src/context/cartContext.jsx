@@ -5,11 +5,11 @@ export const cartCtx = createContext();
 export default function CartContextProvider({ children }) {
     const [cart, setCart] = useState([]);
 
-    function addItem(item, count) {
+    function addItem(item, quantity) {
         if (isInCart(item.id)) {
             let newCart = cart.map((itemMapeo) => {
                 if (itemMapeo.id === item.id) {
-                    itemMapeo.count += count;
+                    itemMapeo.quantity += quantity;
                     return itemMapeo;
                 } else return itemMapeo;
             });
@@ -17,13 +17,13 @@ export default function CartContextProvider({ children }) {
             setCart(newCart);
         } else {
             let newCart = cart.map((item) => item);
-            newCart.push({ ...item, count: count });
+            newCart.push({ ...item, quantity });
             setCart(newCart);
         }
     }
 
     function getTotalItemsInCart() {
-        return cart.reduce((acc, { quantity }) => acc + quantity, 0);
+        return cart.reduce((totalQty, { quantity }) => totalQty + quantity, 0);
     }
 
     function isInCart(id) {
