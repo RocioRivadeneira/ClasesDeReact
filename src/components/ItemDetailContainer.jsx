@@ -35,6 +35,7 @@ function ItemDetailConteiner() {
                 img={item.img}
                 title={item.title}
                 detail={item.detail}
+                category={item.category}
                 price={item.price}
                 stock={item.stock}
             />

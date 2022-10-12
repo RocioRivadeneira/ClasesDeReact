@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { Link } from "react-router-dom";
 
 import CartWidget from "./CartWidget";
 import UserWidget from "./UserWidget";
+import { cartCtx } from "../../context/cartContext";
 
 import "./navbar.css";
 
 function NavBar({ title }) {
+    const { getTotalItemsInCart } = useContext(cartCtx);
+    const itemsCount = getTotalItemsInCart();
+
     return (
         <>
             <nav className="Navbar">
@@ -36,10 +40,13 @@ function NavBar({ title }) {
                 </div>
 
                 <div className="NavSec user">
-                    <Link to="/cart" className="User">
-                        <CartWidget />
-                        Carrito
-                    </Link>
+                    {itemsCount ? (
+                        <Link to="/cart" className="User">
+                            <CartWidget itemsCount={itemsCount} />
+                        </Link>
+                    ) : (
+                        ""
+                    )}
 
                     <Link to="/" className="User">
                         <UserWidget />

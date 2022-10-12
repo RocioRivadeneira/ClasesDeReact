@@ -1,15 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { cartCtx } from "../../context/cartContext";
 
-function CartWidget() {
-    const { getTotalItemsInCart } = useContext(cartCtx);
+function CartWidget({ itemsCount }) {
     return (
         <>
             <span classID="carrito">
-                <FontAwesomeIcon icon={faCartShopping} />
-                <span>{getTotalItemsInCart() > 0 && getTotalItemsInCart()}</span>
+                <FontAwesomeIcon icon={faCartShopping} /> Carrito
+                {itemsCount > 0 && ` (${itemsCount})`}
             </span>
         </>
     );

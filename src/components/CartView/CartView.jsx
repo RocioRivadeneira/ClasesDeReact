@@ -11,7 +11,8 @@ function CartView() {
     if (!cart.length) {
         return (
             <div class="text-center my-2 h4">
-                Tu carrito está vacio... <Link to="/">Ver productos</Link>{" "}
+                Tu carrito está vacio...
+                <Link to="/">Ver productos</Link>{" "}
             </div>
         );
     }
@@ -20,6 +21,12 @@ function CartView() {
         return (quantity) => {
             addItem(item, quantity);
         };
+    }
+    function obtenerTotal(cart) {
+        return Object.values(cart).reduce(
+            (total, { price, quantity }) => (total += price * quantity),
+            0
+        );
     }
 
     return (
@@ -30,7 +37,7 @@ function CartView() {
                         <tr>
                             <th>Producto</th>
                             <th>Nombre</th>
-                            <th>Detalles</th>
+                            <th className="w-25">Detalles</th>
                             <th>Precio</th>
                             <th>Unidades</th>
                             <th>Cantidad</th>
@@ -69,6 +76,10 @@ function CartView() {
                     </table>
                 </div>
             ))}
+
+            <h4 className="text-center">
+                Total a pagar: ${obtenerTotal(cart)}
+            </h4>
         </div>
     );
 }
