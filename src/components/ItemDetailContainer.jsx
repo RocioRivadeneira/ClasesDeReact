@@ -2,16 +2,32 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getItem } from "../services/mockAPI";
 import ItemDetail from "./ItemDetail/ItemDetail";
+import { DotSpinner } from "@uiball/loaders";
 
 function ItemDetailConteiner() {
-    let [item, setData] = useState({});
+    const [item, setData] = useState({});
+    const [error, setError] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+
     const { id } = useParams();
 
     useEffect(() => {
-        getItem(id).then(setData);
+        getItem(id)
+            .then(setData)
+            .catch(setError)
+            .finally(() => setIsLoading(false));
     }, [id]);
 
-    return (
+    if (isLoading) {
+        return <DotSpinner size={50} speed={0.9} color="black" />;
+    }
+
+    return error ? (
+        <div>
+            <h2>Error obteniendo los datos</h2>
+            <p>{error}</p>
+        </div>
+    ) : (
         <div className="d-flex justify-content-center">
             <ItemDetail
                 key={item.id}

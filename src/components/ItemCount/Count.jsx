@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import {Link} from "react-router-dom";
 
 import "./count.css";
 
@@ -41,12 +42,13 @@ const ItemCount = ({ stockLimit, onAddToCart }) => {
                         <FontAwesomeIcon icon={faPlus} />
                     </button>
                 </div>
-                <button
+                <Link
+                    to="/cart"
                     className="carrito"
                     onClick={() => onAddToCart(quantity)}
                 >
                     Agregar al carrito
-                </button>
+                </Link>
             </div>
         </div>
     );

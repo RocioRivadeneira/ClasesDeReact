@@ -36,7 +36,7 @@ function NavBar({ title }) {
                 </div>
 
                 <div className="NavSec user">
-                    <Link to="/" className="User">
+                    <Link to="/cart" className="User">
                         <CartWidget />
                         Carrito
                     </Link>

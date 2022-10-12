@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getItems, getItemsByCategory } from "../services/mockAPI";
+import { DotSpinner } from "@uiball/loaders";
 
+import { getItems, getItemsByCategory } from "../services/mockAPI";
 import ItemList from "./Card/ItemList";
 
 import "./NavBar/navbar.css";
@@ -9,20 +10,26 @@ import "./Card/card.css";
 
 function ItemListContainer() {
     let [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState();
     const { category } = useParams();
 
     useEffect(() => {
-        if (category === undefined) {
-            getItems().then(setData);
-        } else {
-            getItemsByCategory(category).then(setData);
-        }
+        setIsLoading(true);
+
+        let itemsPromise =
+            category === undefined ? getItems() : getItemsByCategory(category);
+
+        itemsPromise.then(setData).finally(() => setIsLoading(false));
     }, [category]);
 
     return (
         <div className="container">
             <h2>Nuestros productos</h2>
-            <ItemList data={data} />
+            {isLoading ? (
+                <DotSpinner size={50} speed={0.9} color="black" />
+            ) : (
+                <ItemList data={data} />
+            )}
         </div>
     );
 }

@@ -9,7 +9,7 @@ function CartWidget() {
         <>
             <span classID="carrito">
                 <FontAwesomeIcon icon={faCartShopping} />
-                <span>{getTotalItemsInCart()}</span>
+                <span>{getTotalItemsInCart() > 0 && getTotalItemsInCart()}</span>
             </span>
         </>
     );

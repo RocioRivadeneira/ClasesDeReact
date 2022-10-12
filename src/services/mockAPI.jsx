@@ -10,26 +10,24 @@ export function getItems() {
 
 export function getItem(itemId) {
     return new Promise((resolve, reject) => {
-        let item = data.find(({ id }) => {
-            return id === parseInt(itemId);
-        });
+        const item = data.find(({ id }) => id === parseInt(itemId));
 
         setTimeout(() => {
             if (item) resolve(item);
-            else reject("item no encontrado");
+            else reject("Item no encontrado");
         }, 1500);
     });
 }
 
 export function getItemsByCategory(category) {
     return new Promise((resolve, reject) => {
-        let items = data.filter((item) => {
+        const items = data.filter((item) => {
             return item.category === category;
         });
 
         setTimeout(() => {
-            if (items.length) resolve(items);
-            else reject("categoría no encontrada");
+            if (items) resolve(items);
+            else reject("Categoría no encontrada");
         }, 1500);
     });
 }
