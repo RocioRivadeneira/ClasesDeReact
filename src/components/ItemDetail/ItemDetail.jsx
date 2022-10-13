@@ -27,7 +27,7 @@ function ItemDetail(item) {
             allowOutsideClick: false,
         });
 
-        navigate(isConfirmed ? "/cart" : `/categoria/${item.category}`);
+        navigate(isConfirmed ? "/cart" : `/`);
     }
 
     return (
