@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getItem } from "../services/mockAPI";
+import { getItem } from "../data/firestore";
 import ItemDetail from "./ItemDetail/ItemDetail";
 import { DotSpinner } from "@uiball/loaders";
 

@@ -31,19 +31,19 @@ function CartView() {
 
     return (
         <div>
-            {cart.map((item) => (
-                <div>
-                    <table className="text-center">
-                        <tr>
-                            <th>Producto</th>
-                            <th>Nombre</th>
-                            <th className="w-25">Detalles</th>
-                            <th>Precio</th>
-                            <th>Unidades</th>
-                            <th>Cantidad</th>
-                            <th>Eliminar</th>
-                            <th>Total</th>
-                        </tr>
+            <div>
+                <table className="text-center">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Nombre</th>
+                        <th className="w-25">Detalles</th>
+                        <th>Precio</th>
+                        <th>Unidades</th>
+                        <th>Cantidad</th>
+                        <th>Eliminar</th>
+                        <th>Total</th>
+                    </tr>
+                    {cart.map((item) => (
                         <tr>
                             <td>
                                 <img
@@ -73,9 +73,9 @@ function CartView() {
                             </td>
                             <td>{item.price * item.quantity}</td>
                         </tr>
-                    </table>
-                </div>
-            ))}
+                    ))}
+                </table>
+            </div>
 
             <h4 className="text-center">
                 Total a pagar: ${obtenerTotal(cart)}

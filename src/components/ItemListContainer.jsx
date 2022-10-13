@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { DotSpinner } from "@uiball/loaders";
 
-import { getItems, getItemsByCategory } from "../services/mockAPI";
+import { getItems, getItemsByCategory } from "../data/firestore";
 import ItemList from "./Card/ItemList";
 
 import "./NavBar/navbar.css";

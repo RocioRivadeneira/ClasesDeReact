@@ -12,10 +12,8 @@ export function getItem(itemId) {
     return new Promise((resolve, reject) => {
         const item = data.find(({ id }) => id === parseInt(itemId));
 
-        setTimeout(() => {
-            if (item) resolve(item);
-            else reject("Item no encontrado");
-        }, 1500);
+        if (item) resolve(item);
+        else reject("Item no encontrado");
     });
 }
 
@@ -25,9 +23,7 @@ export function getItemsByCategory(category) {
             return item.category === category;
         });
 
-        setTimeout(() => {
-            if (items) resolve(items);
-            else reject("Categoría no encontrada");
-        }, 1500);
+        if (items) resolve(items);
+        else reject("Categoría no encontrada");
     });
 }
