@@ -17,23 +17,22 @@ button{
 }
 
 .contador{
-  text-align: center;
-  width: 100px;
+  display: flex;
+ text-align: center;
+  width: 120px;
   border-style: none;
 }
 
 .box{
   display: flex;
-  justify-content: space-evenly;
-  margin: 10px;
-  border: 1px solid #0099CC;
+  margin: 15px;
+  border: 1px solid #9eb23b;;
 
 }
 
 .carrito{
-  margin-top: 5px;
-  padding: 5px;
-color: #0099CC;
-border: 1px solid #0099CC;
+  padding: 10px;
+color: black;
+border: 1px solid #9eb23b;;
 
 }

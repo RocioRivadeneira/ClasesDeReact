@@ -1,10 +1,21 @@
-th{
-   color:grey;
-   font-size: 20px;
+.cartList {
+    text-align: center;
 }
 
-.img{
-    width: 200px;
-    height: 200px;
-    margin-top: 10px;
+.cartList_head {
+    color: white;
+    background-color: olivedrab;
+}
+
+.titulo {
+    text-align: center;
+    color: white;
+    background-color: #9eb23b;
+}
+.eliminar{
+    color: white;
+}
+
+table {
+    font-size: 15px;
 }

@@ -1,10 +1,11 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartContextProvider from "./context/cartContext";
-import CartView from "./components/CartView/CartView.jsx";
+import CartView from "./components/CartView/CartView";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailConteiner from "./components/ItemDetailContainer";
+import Checkout from "./components/Checkout/Checkout";
 import Footer from "./components/Footer/Footer";
 
 
@@ -31,6 +32,10 @@ function App() {
                     <Route
                         path="/cart"
                         element={<CartView />}
+                    />
+                    <Route
+                        path="/checkout/:orderid"
+                        element={<Checkout />}
                     />
 
                 </Routes>

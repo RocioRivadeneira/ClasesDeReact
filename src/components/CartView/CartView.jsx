@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { cartCtx } from "../../context/cartContext";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
+import Button from "../Button/Button";
 import ItemCount from "../ItemCount/Count";
 
 import "./cartView.css";
@@ -10,7 +12,7 @@ function CartView() {
 
     if (!cart.length) {
         return (
-            <div class="text-center my-2 h4">
+            <div className="text-center my-2 h4">
                 Tu carrito está vacio...
                 <Link to="/">Ver productos</Link>{" "}
             </div>
@@ -22,6 +24,7 @@ function CartView() {
             addItem(item, quantity);
         };
     }
+
     function obtenerTotal(cart) {
         return Object.values(cart).reduce(
             (total, { price, quantity }) => (total += price * quantity),
@@ -30,10 +33,12 @@ function CartView() {
     }
 
     return (
-        <div>
-            <div>
-                <table className="text-center">
-                    <tr>
+        <>
+            <h2 className="titulo">Tu Carrito</h2>
+
+            <table className="table table-hover cartList">
+                <thead className="cartList_head">
+                    <tr className="cartList_row">
                         <th>Producto</th>
                         <th>Nombre</th>
                         <th className="w-25">Detalles</th>
@@ -43,45 +48,44 @@ function CartView() {
                         <th>Eliminar</th>
                         <th>Total</th>
                     </tr>
-                    {cart.map((item) => (
-                        <tr>
-                            <td>
-                                <img
-                                    className="img"
-                                    src={item.img}
-                                    alt={item.title}
-                                />
-                            </td>
-                            <td>{item.title}</td>
-                            <td>{item.detail}</td>
-                            <td>$ {item.price}</td>
-                            <td>{item.quantity}</td>
-                            <td>
-                                <ItemCount
-                                    stockLimit={item.stock}
-                                    onAddToCart={handleAddToCart(item)}
-                                />
-                            </td>
-                            <td>
-                                <button
-                                    type="button"
-                                    className="btn btn-link text-decoration-none mt-2"
-                                    onClick={() => removeItem(item)}
-                                >
-                                    X
-                                </button>
-                            </td>
-                            <td>{item.price * item.quantity}</td>
-                        </tr>
-                    ))}
-                </table>
-            </div>
-
-            <h4 className="text-center">
-                Total a pagar: ${obtenerTotal(cart)}
-            </h4>
-        </div>
+                </thead>
+                <tbody>
+                    {cart.map((item) => {
+                        return (
+                            <tr key={item.id} className="cartList_row">
+                                <td>
+                                    <img
+                                        height={50}
+                                        src={item.img}
+                                        alt={item.title}
+                                    />
+                                </td>
+                                <td>{item.title}</td>
+                                <td>{item.detail}</td>
+                                <td>${item.price}</td>
+                                <td>{item.quantity}</td>
+                                <td>
+                                    <ItemCount
+                                        className="edit"
+                                        stockLimit={item.stock}
+                                        onAddToCart={handleAddToCart(item)}
+                                    />
+                                </td>
+                                <td>
+                                    <Button onClick={() => removeItem(item)}>
+                                      <strong className="eliminar">X</strong>
+                                    </Button>
+                                </td>
+                                <th>$ {item.price * item.quantity}</th>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+            <h5 className="text-secondary text-center">El total de tu compra es de ${obtenerTotal(cart)}</h5>
+            <h4 className="text-center">Para finalizar la compra llene el siguiente formulario:</h4>
+            <CheckoutForm />
+        </>
     );
 }
-
 export default CartView;
