@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { cartCtx } from "../../context/cartContext";
-import { Link } from "react-router-dom";
 import { createBuyOrder } from "../../data/firestore";
 
 import "./CheckoutForm.css";
@@ -20,15 +19,23 @@ function CheckoutForm() {
 
     function handleCheckout(event) {
         event.preventDefault();
-        /* { buyer: { name, phone, email }, items: [{id, title, price}], total  } */
+
         const orderData = {
             buyer: dataForm,
-            items: cart,
+            items: cart.map(({ id, title, price, quantity }) => ({
+                id,
+                title,
+                price,
+                quantity,
+            })),
             date: new Date(),
             total: getTotalPriceInCart(),
         };
+
         createBuyOrder(orderData).then((orderid) => {
-            navigate(`/checkout/${orderid}`);
+            navigate(`/checkout/${orderid}`, {
+                state: { buyer: dataForm },
+            });
         });
     }
 
@@ -43,7 +50,7 @@ function CheckoutForm() {
 
     return (
         <div className="form-container border border-success mb-3">
-            <form className="mt-2 mb-2"onSubmit={handleCheckout}>
+            <form className="mt-2 mb-2" onSubmit={handleCheckout}>
                 <div className="form-item">
                     <label htmlFor="name">Nombre y Apellido</label>
                     <input
@@ -82,7 +89,9 @@ function CheckoutForm() {
                         required
                     />
                 </div>
-                <strong><Link to={"/checkout/:orderid"}  className="end mb-3" type="submit">Finalizar Compra</Link></strong>
+                <button className="end mb-3" type="submit">
+                    Finalizar Compra
+                </button>
             </form>
         </div>
     );

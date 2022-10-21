@@ -47,9 +47,11 @@ export default function CartContextProvider({ children }) {
 
     function getTotalPriceInCart() {
         let total = 0;
-        cart.forEach((item) => (total += item.count * item.price));
+
+        cart.forEach((item) => (total += item.quantity * item.price));
+
         return total;
-      }
+    }
 
     return (
         <cartCtx.Provider
@@ -60,7 +62,7 @@ export default function CartContextProvider({ children }) {
                 clear,
                 getTotalItemsInCart,
                 isInCart,
-                getTotalPriceInCart
+                getTotalPriceInCart,
             }}
         >
             {children}
