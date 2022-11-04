@@ -23,8 +23,8 @@ function ItemListContainer() {
     }, [category]);
 
     return (
+
         <div className="container">
-            <h2>Nuestros productos</h2>
             {isLoading ? (
                 <DotSpinner size={50} speed={0.9} color="black" />
             ) : (

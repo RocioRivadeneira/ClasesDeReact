@@ -12,14 +12,9 @@ function App() {
     return (
         <CartContextProvider>
             <BrowserRouter>
-                <NavBar title="Muebles Smiths" />
+                <NavBar title="Muebles Smith´s" />
                 <Routes>
-                    <Route
-                        path="/"
-                        element={
-                            <ItemListContainer greeting="Nuestros productos" />
-                        }
-                    />
+                    <Route path="/" element={<ItemListContainer />} />
                     <Route
                         path="/categoria/:category"
                         element={<ItemListContainer />}

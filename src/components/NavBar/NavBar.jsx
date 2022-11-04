@@ -37,6 +37,7 @@ function NavBar({ title }) {
                     <Link to="/categoria/Living" className="link">
                         Living
                     </Link>
+                  
                 </div>
 
                 <div className="NavSec user">

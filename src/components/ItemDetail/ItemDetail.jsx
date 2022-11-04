@@ -17,7 +17,6 @@ function ItemDetail(item) {
         addItem(item, quantity);
 
         const { isConfirmed = false } = await Swal.fire({
-            position: "top-center",
             icon: "success",
             title: `Agregaste "${item.title}" a tu carrito.`,
             showConfirmButton: true,
@@ -31,20 +30,29 @@ function ItemDetail(item) {
     }
 
     return (
-        <FlexWrapper rows={true}>
-            <div className="container">
-                <div className="card">
-                    <img src={item.img} className="card-img-top" alt="..." />
-                    <div className="card-body">
-                        <h5 className="card-title">{item.title}</h5>
-                        <p className="card-text">{item.detail} </p>
-                        <h4 className="card-price">$ {item.price}</h4>
-                        <strong>Stock Disponible: {item.stock}</strong>
-
-                        <ItemCount
-                            stockLimit={item.stock}
-                            onAddToCart={handleAddToCart}
+        <FlexWrapper>
+            <div className="card-detail">
+                <div className="row">
+                    <div className="col-md-4 ">
+                        <img
+                            src={item.img}
+                            className="img-item img-fluid rounded-start"
+                            alt="..."
                         />
+                    </div>
+                    <div className="col-md-8">
+                        <div className="card-body-detail">
+                            <h5 className="card-title">{item.title}</h5>
+                            <p className="card-text">{item.detail} </p>
+                            <h4 className="card-price">$ {item.price}</h4>
+                            <p className="card-text text-muted">
+                                Stock Disponible: {item.stock}
+                            </p>
+                            <ItemCount
+                                stockLimit={item.stock}
+                                onAddToCart={handleAddToCart}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

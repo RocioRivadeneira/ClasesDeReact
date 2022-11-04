@@ -7,11 +7,10 @@ function ItemList(props) {
     const navigate = useNavigate();
 
     return (
-        <div className="row justify-content-around">
+        <div className="row justify-content-evenly">
             {props.data.map((item) => {
                 return (
                     <Item
-                        className="col-4"
                         onClickImagen={() => navigate(`/detail/${item.id}`)}
                         key={item.id}
                         id={item.id}

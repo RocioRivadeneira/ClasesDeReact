@@ -49,13 +49,15 @@ function CartView() {
                         <th>Total</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="align-middle">
                     {cart.map((item) => {
                         return (
                             <tr key={item.id} className="cartList_row">
                                 <td>
                                     <img
-                                        height={50}
+                                    className="image-table"
+                                        height={120}
+                                        width={120}
                                         src={item.img}
                                         alt={item.title}
                                     />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./button.css";
 
 function Button(props) {
-  let [color, setColor] = useState("OliveDrab");
+  let [color, setColor] = useState("#7d6e76");
 
   function handleClick() {
     props.onClick && props.onClick();

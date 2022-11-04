@@ -1,9 +1,12 @@
 .card {
     width: 18rem;
-
-    margin: 1rem 0;
-
+    margin: 1rem;
     text-align: center;
+}
+
+.img-trum{
+width: 16.5rem;
+height: 16rem;
 }
 
 .vermas {

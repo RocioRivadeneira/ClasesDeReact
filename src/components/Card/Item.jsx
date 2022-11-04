@@ -7,7 +7,7 @@ function Item(props) {
     return (
         <div className="card">
             <button onClick={props.onClickImagen}>
-                <img src={props.img} className="card-img-top" alt="..." />
+                <img src={props.img} className="card-img-top img-trum" alt="..." />
             </button>
             <div className="card-body">
                 <h5 className="card-title">{props.title}</h5>

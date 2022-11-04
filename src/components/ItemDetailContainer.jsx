@@ -24,22 +24,19 @@ function ItemDetailConteiner() {
 
     return error ? (
         <div>
-            <h2>Error obteniendo los datos</h2>
-            <p>{error}</p>
+            <h2>Error obteniendo los datos de la orden: {id} </h2>
         </div>
     ) : (
-        <div className="d-flex justify-content-center">
-            <ItemDetail
-                key={item.id}
-                id={item.id}
-                img={item.img}
-                title={item.title}
-                detail={item.detail}
-                category={item.category}
-                price={item.price}
-                stock={item.stock}
-            />
-        </div>
+        <ItemDetail
+            key={item.id}
+            id={item.id}
+            img={item.img}
+            title={item.title}
+            detail={item.detail}
+            category={item.category}
+            price={item.price}
+            stock={item.stock}
+        />
     );
 }
 

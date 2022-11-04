@@ -36,13 +36,15 @@ export async function getItems() {
 }
 
 export async function getItem(idParams) {
-    try {
-        const docRef = doc(firestore, "productos", idParams);
-        const docSnapshot = await getDoc(docRef);
-        return { ...docSnapshot.data(), id: docSnapshot.id };
-    } catch (error) {
-        console.error(error);
+    const docRef = doc(firestore, "productos", idParams);
+    const docSnapshot = await getDoc(docRef);
+    const docData = docSnapshot.data();
+
+    if (docData) {
+        return { ...docData, id: docSnapshot.id };
     }
+
+    throw new Error("Document not found.");
 }
 
 export async function getItemsByCategory(category) {

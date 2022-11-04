@@ -49,7 +49,7 @@ function CheckoutForm() {
     }
 
     return (
-        <div className="form-container border border-success mb-3">
+        <div className="form-container border border-secondary mb-3">
             <form className="mt-2 mb-2" onSubmit={handleCheckout}>
                 <div className="form-item">
                     <label htmlFor="name">Nombre y Apellido</label>
@@ -71,7 +71,7 @@ function CheckoutForm() {
                         value={dataForm.phone}
                         onChange={inputChangeHandler}
                         name="phone"
-                        type="text"
+                        type="number"
                         placeholder="Telefono"
                         required
                     />

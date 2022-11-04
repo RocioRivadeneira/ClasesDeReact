@@ -3,8 +3,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-   
 }
 
 .buttons {
@@ -12,27 +10,25 @@
     position: relative;
 }
 
-button{
-  border-style: none;
+button {
+    border-style: none;
 }
 
-.contador{
-  display: flex;
- text-align: center;
-  width: 120px;
-  border-style: none;
+.contador {
+    display: flex;
+    text-align: center;
+    width: 120px;
+    border-style: none;
 }
 
-.box{
-  display: flex;
-  margin: 15px;
-  border: 1px solid #9eb23b;;
-
+.box {
+    display: flex;
+    margin: 15px;
+    border: 1px solid #7d6e76;
 }
 
-.carrito{
-  padding: 10px;
-color: black;
-border: 1px solid #9eb23b;;
-
+.carrito {
+    padding: 10px;
+    color: black;
+    border: 1px solid #7d6e76;
 }

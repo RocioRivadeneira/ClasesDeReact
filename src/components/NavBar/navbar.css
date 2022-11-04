@@ -11,13 +11,8 @@ h2 {
     color: white;
     margin: 0px;
     text-align: center;
-    background-color: #9eb23b;
+    background-color: #7d6e76;
 }
-
-main {
-    background-color: #b7c76a;
-}
-
 main .titulo {
     text-align: center;
     color: white;
@@ -31,7 +26,7 @@ main .titulo {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    background-color: #c7d36f;
+    background-color: #8f8088;
 }
 
 /*Menu central*/
@@ -41,18 +36,19 @@ main .titulo {
     flex-direction: row;
 }
 
-.NavSec .link , .NavSec .User{
+.NavSec .link,
+.NavSec .User {
     color: white;
     font-size: 18px;
     text-decoration: none;
     padding: 10px;
     margin: 5px;
     border-radius: 8px;
-    background-color: #9eb23b;
-
+    background-color: #7d6e76;
 }
 
-.NavSec .link:hover , .NavSec .User:hover{
-    background-color: #b8f1aa;
-    color:black
+.NavSec .link:hover,
+.NavSec .User:hover {
+    background-color: #a1919a;
+    color: black;
 }
