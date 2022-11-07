@@ -10,7 +10,6 @@ import {
     addDoc,
 } from "firebase/firestore";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyC60Q-0hwDtgCw0QDIqOGqX8y3uG8x0bWA",
     authDomain: "muebles-smith.firebaseapp.com",

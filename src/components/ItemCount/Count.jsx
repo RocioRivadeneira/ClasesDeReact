@@ -4,18 +4,16 @@ import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 import "./count.css";
 
-const ItemCount = ({ stockLimit, onAddToCart }) => {
-    const [quantity, setQuantity] = useState(1);
+const ItemCount = ({ defaultQuantity = 1, stockLimit, onAddToCart }) => {
+    const [quantity, setQuantity] = useState(defaultQuantity);
 
     const incrementoContador = () => {
-        /* utilizo el estado ya declarado setQuantity para incrementar la cantidad*/
         if (quantity < stockLimit) {
             setQuantity(quantity + 1);
         }
     };
 
     const decrementoContador = () => {
-        /* Utilizo el estado ya declarado para decrementar la cantidad */
         if (quantity > 1) {
             setQuantity(quantity - 1);
         }

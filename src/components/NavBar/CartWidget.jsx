@@ -6,7 +6,7 @@ function CartWidget({ itemsCount }) {
     return (
         <>
             <span classID="carrito">
-                <FontAwesomeIcon icon={faCartShopping} /> Carrito
+                <FontAwesomeIcon icon={faCartShopping} />
                 {itemsCount > 0 && ` (${itemsCount})`}
             </span>
         </>

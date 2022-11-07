@@ -55,7 +55,7 @@ function CartView() {
                             <tr key={item.id} className="cartList_row">
                                 <td>
                                     <img
-                                    className="image-table"
+                                        className="image-table"
                                         height={120}
                                         width={120}
                                         src={item.img}
@@ -69,13 +69,14 @@ function CartView() {
                                 <td>
                                     <ItemCount
                                         className="edit"
+                                        defaultQuantity={item.quantity}
                                         stockLimit={item.stock}
                                         onAddToCart={handleAddToCart(item)}
                                     />
                                 </td>
                                 <td>
                                     <Button onClick={() => removeItem(item)}>
-                                      <strong className="eliminar">X</strong>
+                                        <strong className="eliminar">X</strong>
                                     </Button>
                                 </td>
                                 <th>$ {item.price * item.quantity}</th>
@@ -84,8 +85,12 @@ function CartView() {
                     })}
                 </tbody>
             </table>
-            <h5 className="text-secondary text-center">El total de tu compra es de ${obtenerTotal(cart)}</h5>
-            <h4 className="text-center">Para finalizar la compra llene el siguiente formulario:</h4>
+            <h5 className="text-secondary text-center">
+                El total de tu compra es de ${obtenerTotal(cart)}
+            </h5>
+            <h4 className="text-center">
+                Para finalizar la compra llene el siguiente formulario:
+            </h4>
             <CheckoutForm />
         </>
     );

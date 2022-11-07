@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import CartWidget from "./CartWidget";
 import UserWidget from "./UserWidget";
+
 import { cartCtx } from "../../context/cartContext";
 
 import "./navbar.css";
@@ -37,13 +38,12 @@ function NavBar({ title }) {
                     <Link to="/categoria/Living" className="link">
                         Living
                     </Link>
-                  
                 </div>
 
                 <div className="NavSec user">
                     {itemsCount ? (
                         <Link to="/cart" className="User">
-                            <CartWidget itemsCount={itemsCount} />
+                            <CartWidget itemsCount={itemsCount} /> Carrito
                         </Link>
                     ) : (
                         ""
@@ -55,6 +55,7 @@ function NavBar({ title }) {
                     </Link>
                 </div>
             </nav>
+            
         </>
     );
 }

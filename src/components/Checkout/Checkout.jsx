@@ -9,7 +9,7 @@ function Checkout() {
     const { state } = useLocation();
 
     if (cart.length) {
-        clear();
+        setTimeout(clear, 0);
     }
 
     return (

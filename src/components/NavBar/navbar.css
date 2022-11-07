@@ -18,7 +18,6 @@ main .titulo {
     color: white;
 }
 
-/*Navbar*/
 .Navbar {
     padding: 0 4em;
     display: flex;
@@ -28,8 +27,6 @@ main .titulo {
     text-align: center;
     background-color: #8f8088;
 }
-
-/*Menu central*/
 
 .NavSec.Menu {
     display: flex;
